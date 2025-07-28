@@ -1,0 +1,130 @@
+<% layout("/layouts/boilerplate")%>
+<style>
+  /* Mobile responsive styles for new listing page */
+  @media (max-width: 768px) {
+    .new-listing-container {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding: 0 1rem;
+    }
+    
+    .new-listing-container h3 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 0.75rem;
+    }
+    
+    .row .col-md-4,
+    .row .col-md-6,
+    .row .col-md-8 {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+<br>
+<div class="row">
+  <div class="col-12 col-md-8 offset-md-2 new-listing-container">
+    <h3>Create a New Listing</h3>
+    <form method="POST" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="title" class="from-label">Title</label>
+        <input name="listing[title]" placeholder="enter title" type="text" class="form-control" required />
+        <div class="valid-feedback">
+          Title Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Not valid Title!
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="from-label">Description</label>
+        <textarea name="listing[description]" class="form-control" required></textarea>
+        <div class="valid-feedback">
+          Description Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Please enter a short Description!
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="inage" class="from-label">Upload Listing Image</label>
+        <input
+        name="image"
+        type="file"
+        class="form-control"
+        />
+      </div>
+      <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="price" class="from-label" >Price</label>
+          <input name="listing[price]" placeholder="enter price" type="number" class="form-control" required />
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Enter valid price!
+          </div>
+        </div>
+        <div class="mb-3 col-md-8">
+          <label for="country" class="from-label" >Country</label>
+          <input name="listing[country]" placeholder="enter country" type="text" class="form-control" required/>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Enter valid Country!
+          </div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="mb-3 col-md-6">
+          <label for="latitude" class="from-label" >Latitude</label>
+          <input name="listing[latitude]" placeholder="enter latitude" type="number" step="any" class="form-control" required />
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Enter valid latitude!
+          </div>
+        </div>
+        <div class="mb-3 col-md-6">
+          <label for="longitude" class="from-label" >Longitude</label>
+          <input name="listing[longitude]" placeholder="enter longitude" type="number" step="any" class="form-control" required/>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+          <div class="invalid-feedback">
+            Enter valid longitude!
+          </div>
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="location" class="form-label" >Location</label>
+        <input
+        name="listing[location]"
+        placeholder="enter location"
+        type="text"
+        class="form-control"
+        required
+        />
+        <div class="valid-feedback">
+         Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Enter valid Location!
+        </div>
+      </div>
+      <button class="btn btn-dark add-btn">Add</button>
+      <br><br>
+    </form>
+  </div>
+</div>
